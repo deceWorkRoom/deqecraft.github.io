@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    .slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 300px; /* 设置轮播图容器的高度 */
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* 添加过渡效果 */
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+    </style>
+    <meta charset="utf-8">
+    <title>欢迎来到学而思编程</title>
+</head>
+<body>
+    <p>Hello,欢迎来到Web网站</p>
+    <div class="slideshow-container">
+  <div class="slide">
+    <img src="image1.jpg" alt="Image 1">
+  </div>
+  <div class="slide">
+    <img src="image2.jpg" alt="Image 2">
+  </div>
+  <div class="slide">
+    <img src="image3.jpg" alt="Image 3">
+  </div>
+</div>
+<script>
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+
+function showSlide() {
+  slides.forEach((slide, index) => {
+    if (index === currentSlide) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+}
+
+function nextSlide() {
+  currentSlide++;
+  if (currentSlide >= slides.length) {
+    currentSlide = 0;
+  }
+  showSlide();
+}
+
+setInterval(nextSlide, 3000); // 自动切换轮播图，每隔3秒切换一次
+
+</script>
+</body>
+</html>

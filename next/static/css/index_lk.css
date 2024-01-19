@@ -1,0 +1,30 @@
+.alertBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 40px;
+  max-width: 400px;
+  display: none;
+}
+
+.closeBtn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  color: #333;
+}
+
+.safeLink {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
