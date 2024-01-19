@@ -1,1 +1,1 @@
-# deqecraft.github.io
+# 这是一个由该工作室室长为工作室编写的官网
