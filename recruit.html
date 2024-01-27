@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>deqecraft 工作室招聘</title>
+  	<link type="text/css"  rel="shortcut icon" href="/static/deqecraft.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color:orange;
+    }
+
+    header {
+      background-color: lightblue;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 20px 20px 20px 20px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 50px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .position {
+      margin-bottom: 40px;
+    }
+
+    .position h3 {
+      margin: 0;
+    }
+
+    .position ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .position ul li {
+      margin-bottom: 10px;
+    }
+
+    a.apply-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    a.apply-button:hover {
+      background-color: #555;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    div,h2,h3,#v{
+        text-align:center;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <h1>deqecraft 工作室招聘</h1>
+    <nav>
+      <ul>
+        <li><a href="#positions">空缺职位</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section id="positions">
+    <h2>空缺职位</h2>
+    <div class="position">
+      <h3>副室长</h3>
+      <h3>名额:2人</h3>
+      <h3>必会语言(至少精通60%):html，css，javascript，python</h3>
+      <ul>
+        <p>负责开发和维护官网的前端部分</p>
+        <p>使用HTML、CSS和JavaScript等技术进行开发</p>
+        <p>与用户体验紧密相连，确保官网界面的高质量</p>
+        <p>尽量优化官网的性能(如果可以的话)</p>
+        <p>无论做什么事都认真，做最好</p>
+        <p>遇事冷静，不参与/避免损坏本工作室名誉、利益的事</p>
+        <p>对待成员认真负责，如果不是很严重的事尽量避免裁员</p>
+        <p>诚信友善，礼貌发言</p>
+        <p>在特殊情况(室长跑路)，顶替空缺</p>
+      </ul>
+      <a href="#contact" class="apply-button">申请职位</a>
+    </div>
+
+    <div class="position">
+      <h3>普通成员</h3>
+      <h3>名额:不限</h3>
+      <h3>必会语言:不限</h3>
+      <ul>
+        <p>无论做什么事都认真，做最好</p>
+        <p>不参与/避免损坏本工作室名誉、利益的事</p>
+        <p>诚信友善，礼貌发言</p>
+      </ul>
+      <a href="#contact" class="apply-button">申请职位</a>
+    </div>
+
+  </section><br><br><br><br><br><br><br>
+
+  <section id="contact" style="text-align:center">
+    <h2>联系我们</h2>
+    <p>如果你对我们的工作室或者职位感兴趣，请发送你申请的职位，代表作，会的语言到该作品评论区：</p>
+    <p><a target="_blank" href="https://code.xueersi.com/home/project/detail?lang=code&pid=50400314&version=offline&form=python&langType=python">申请链接</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 deqecraft 工作室. 版权所有.</p>
+  </footer>
+  <script>
+        const navbar = document.querySelector('.navbar');
+        const navbarOffsetTop = navbar.offsetTop;
+        
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset >= navbarOffsetTop) {
+            navbar.classList.add('fixed');
+          } else {
+            navbar.classList.remove('fixed');
+          }
+        });
+  </script>
+</body>
+</html>
