@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>加载动画示例</title>
+    <style>
+            /* 加载动画容器样式 */
+        #loading {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+        
+        /* 简单的旋转加载动画 */
+        .loader {
+            border: 5px solid #f3f3f3; /* Light grey */
+            border-top: 5px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* 内容样式 */
+        #content {
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+        
+        /* 居中容器样式 */
+        .center-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Deqecraft工作室样式 */
+        .deqecraft {
+            text-align: center; /* 确保文本居中 */
+            width: 100%; /* 宽度设置为100%，以便文本居中对齐 */
+            opacity: 0; /* 初始透明度为0（完全透明） */
+            font-size: 2em; /* 增大文字大小 */
+            color: #3498db; /* 文字颜色 */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 使用更加优雅的字体 */
+            font-weight: bold; /* 字体加粗 */
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* 添加文字阴影，增加立体感 */
+            animation: deqecraftAnimation 2s ease-out forwards 1s; /* 调整动画效果 */
+        }
+        
+        /* 定义动画效果 */
+        @keyframes deqecraftAnimation {
+            0% {
+                transform: scale(0.5); /* 初始缩放 */
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1); /* 最终正常大小 */
+                opacity: 1; /* 最终透明度为1（完全不透明） */
+            }
+        }
+
+        /* 淡出网页内容样式 */
+        #content.fade-out {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 加载动画容器 -->
+    <div id="loading">
+        <div class="center-container">
+            <div class="loader"></div>
+            <div class="deqecraft">Deqecraft工作室</div>
+        </div>
+    </div>
+
+    <!-- 实际网页内容 -->
+    <div id="content">
+        <h1>欢迎来到我的网站</h1>
+        <p>这是一个示例网页，展示了如何实现加载动画。</p>
+    </div>
+
+    <script>
+        // 记录页面开始加载的时间
+        var startTime = new Date().getTime();
+    
+        window.addEventListener('load', function() {
+            // 页面加载完毕时的当前时间
+            var endTime = new Date().getTime();
+            // 计算已经过去的时间
+            var timeElapsed = endTime - startTime;
+            // 计算还需等待的时间（至少2秒）
+            var remainingTime = Math.max(0, 2000 - timeElapsed);
+    
+            // 使用setTimeout来确保加载动画至少显示2秒钟
+            setTimeout(function() {
+                // 隐藏加载动画
+                var loading = document.getElementById('loading');
+                loading.style.opacity = '0';
+        
+                // 显示网页内容
+                var content = document.getElementById('content');
+                content.classList.add('fade-out');
+            }, remainingTime + 2000);
+        });
+    </script>
+</body>
+</html>
