@@ -6,6 +6,9 @@ body {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
 
 .navbar {
     background-color: #f8f9fa; /* 修改导航栏背景颜色 */
